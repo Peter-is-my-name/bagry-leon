@@ -66,7 +66,7 @@ Pracujeme převážně v okrese Praha-východ (Říčany, Brandýs nad Labem, Č
     ],
     faqs: [
       { question: "Jakou oblast obsluhujete?", answer: "Primárně Praha-východ a okolí (Říčany, Brandýs nad Labem, Český Brod, Úvaly, Čelákovice, Kostelec nad Černými lesy). Dle dohody zajišťujeme realizace v celém Středočeském kraji a Praze." },
-      { question: "Pracujete i o víkendu?", answer: "Standardně pracujeme Po–Pá 7:00–18:00. Pro urgentní zakázky nebo termíny náročné na počasí jsme schopni domluvit i víkendovou práci." },
+      { question: "Pracujete i o víkendu?", answer: "Jsme NONSTOP dostupní – konzultace probíhají i o víkendu. Pro urgentní zakázky nebo termíny náročné na počasí domluvíme i víkendovou realizaci." },
       { question: "Jak rychle umíte přijet na obhlídku?", answer: "Většinou do 3 pracovních dnů od poptávky. V akutních případech se snažíme reagovat ještě rychleji." },
       { question: "Děláte i menší zakázky?", answer: "Ano, nejmenší bagr má 3,5 tuny a je ideální pro zakázky na menších pozemcích." },
       { question: "Vystavíte fakturu s DPH?", answer: "Ano, jsme plátci DPH a vystavujeme standardní daňové doklady." },
@@ -288,21 +288,21 @@ Před každou zakázkou zajistíme vyznačení stávajících sítí a koordinuj
   },
   {
     slug: "demolice",
-    title: "Demolice",
-    shortTitle: "Demolice",
+    title: "Demolice zahradních domků",
+    shortTitle: "Demolice domků",
     icon: Hammer,
-    description: "Bourací práce a demolice menších staveb, přístaveb, garáží, plotů.",
-    metaTitle: "Demolice a bourací práce Praha-východ | Bagry Leon",
-    metaDescription: "Demolice menších staveb, garáží, plotů, přístaveb. Bourací práce s odvozem suti. Praha-východ. Vlastní technika.",
-    h1: "Demolice — bourací práce s odvozem",
-    intro: `Potřebujete odstranit starou garáž, zděný přístavek, opuštěný plot nebo jinou menší stavbu? Demolice je logickým krokem před novou výstavbou nebo rekultivací pozemku.
+    description: "Demolice zahradních domků, přístavků, menších staveb a plotů. Neprovádíme demolice rodinných domů.",
+    metaTitle: "Demolice zahradních domků Praha-východ | Bagry Leon",
+    metaDescription: "Demolice zahradních domků, přístavků, plotů a menších staveb. Bouračí práce s odvozem suti. Praha-východ. Vlastní technika.",
+    h1: "Demolice zahradních domků a menších staveb",
+    intro: `Potřebujete odstranit starý zahradní domek, přístavek, plot nebo jinou menší stavbu? Specializujeme se na demolice zahradních domků a menších objektů — nebouráme celé rodinné domy.
 
-Provádíme bourací práce na menších objektech včetně následného odvozu suti a úklidu pozemku. Disponujeme hydraulickým kladivem pro rypadlo i pro ruční bourání.
+Provádíme bouračí práce na zahradních domcích, přístavcích, plotech a podobných menších stavbách včetně následného odvozu suti a úkliku pozemku. Disponujeme hydraulickým kladivem pro rypadlo i pro ruční bourání.
 
 Před demolicí vždy ověříme stavební povolení a koordinujeme s majitelem. Po dokončení předáváme pozemek uklizený a připravený pro další využití.`,
     whatIncludes: [
-      "Bourání menších staveb a přístaveb",
-      "Demolice garáží a zahradních domků",
+      "Demolice zahradních domků a altánků",
+      "Bourání přístavků a menších staveb",
       "Bourání plotů a oplocení",
       "Odstranění betonových základů",
       "Odvoz suti a stavebního odpadu",

@@ -54,7 +54,7 @@ export const projects: Project[] = [
     id: "5",
     title: "Komunální služby pro obec",
     category: "Komunální služby",
-    description: "Údržba komunikací, úklid sněhu a zimní údržba pro obecní úřad. Spolehlivá dlouhodobá spolupráce s rychlým reakčním časem.",
+    description: "Údržba komunikací a mulčování pozemků pro obecní úřad. Spolehlivá dlouhodobá spolupráce s rychlým reakčním časem.",
     location: "Šestajovice",
     year: "2024",
     image: "https://www.zemni-vykopove-prace.eu/img/fotogalerie/foto_05.jpg",

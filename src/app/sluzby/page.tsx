@@ -152,7 +152,7 @@ export default function SluzbyPage() {
                 </p>
                 <p className="text-sm text-[#8D867A]">
                   Nejjednodušší je zavolat přímo na <a href="tel:+420777111708" className="text-[#F5C451] hover:underline">+420 777 111 708</a>. 
-                  Jsme k dispozici Po–Pá 7:00–18:00.
+                  Jsme NONSTOP dostupní – konzultace i o víkendu.
                 </p>
               </div>
 

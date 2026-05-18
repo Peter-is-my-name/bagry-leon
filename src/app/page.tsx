@@ -16,12 +16,12 @@ export default function Home() {
     <>
       <Hero />
       <TrustBar />
+      <Reviews />
       <Services />
       <About />
       <Process />
       <MachineFleet />
       <ProjectsGallery />
-      <Reviews />
       <ServiceArea />
       <FAQ />
       <CTASection />

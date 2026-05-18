@@ -23,18 +23,29 @@ export const COMPANY = {
   url: "https://www.bagryleon.cz",
 } as const;
 
-// Service Areas for Local SEO
+// Service Areas for Local SEO - Lokalita neomezena, vzdálenost není problém
 export const SERVICE_AREAS = [
   "Šestajovice",
   "Praha-východ",
   "Praha",
+  "Zeleneč",
+  "Brandýs nad Labem",
   "Klánovice",
   "Úvaly",
   "Jirny",
   "Nehvizdy",
   "Horní Počernice",
   "Běchovice",
+  "Čelákovice",
+  "Říčany",
 ] as const;
+
+// Operating Hours
+export const HOURS = {
+  primary: "NONSTOP",
+  secondary: "Konzultace i o víkendu",
+  note: "Volejte kdykoliv – ozveme se zpět",
+} as const;
 
 // Navigation Links (for multi-page site)
 export const NAV_LINKS = [
@@ -56,7 +67,7 @@ export const FOOTER_LINKS = {
     { href: "/sluzby/nakladni-doprava", label: "Nákladní doprava" },
     { href: "/sluzby/zaklady-domu", label: "Základy domů" },
     { href: "/sluzby/inzenyrske-site", label: "Inženýrské sítě" },
-    { href: "/sluzby/demolice", label: "Demolice" },
+    { href: "/sluzby/demolice", label: "Demolice domků" },
   ],
   spolecnost: [
     { href: "/prubeh", label: "Průběh spolupráce" },

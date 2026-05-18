@@ -63,11 +63,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="cs" className={`${barlowCondensed.variable}`}>
+    <html lang="cs" className={`${barlowCondensed.variable}`} data-scroll-behavior="smooth">
       <head>
         <JsonLd />
       </head>
-      <body className="min-h-screen bg-background font-[var(--font-barlow)] antialiased">
+      <body className="min-h-screen bg-background font-[var(--font-barlow)] antialiased pb-14 lg:pb-0">
         <Navbar />
         <main>{children}</main>
         <Footer />

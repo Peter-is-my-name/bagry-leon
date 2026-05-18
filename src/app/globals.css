@@ -62,11 +62,26 @@
   
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
   
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Safe area for iOS devices with home indicator */
+  @supports (padding: env(safe-area-inset-bottom)) {
+    body {
+      padding-bottom: calc(3.5rem + env(safe-area-inset-bottom));
+    }
+    @media (min-width: 1024px) {
+      body {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+    }
   }
 }
 

@@ -31,8 +31,8 @@ export function Footer() {
                   {COMPANY.email}
                 </a>
               </p>
-              <p className="text-xs text-[#8D867A] pt-2">
-                Po–Pá: 7:00–18:00
+              <p className="text-xs text-[#F5C451] pt-2 font-medium">
+                NONSTOP <span className="text-[#8D867A] font-normal">— konzultace i o víkendu</span>
               </p>
             </address>
           </div>

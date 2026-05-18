@@ -64,9 +64,9 @@ export default function KontaktPage() {
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "07:00",
-        closes: "18:00",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "00:00",
+        closes: "23:59",
       },
     ],
   };
@@ -133,11 +133,11 @@ export default function KontaktPage() {
                   <Clock className="h-5 w-5 text-[#F5C451] mt-0.5" />
                   <div>
                     <h3 className="font-[var(--font-barlow)] text-lg font-bold uppercase text-[#F5F1E8] mb-2">
-                      Otevírací doba
+                      Dostupnost
                     </h3>
                     <p className="text-sm text-[#C9C2B6]">
-                      Po–Pá: 7:00–18:00<br />
-                      <span className="text-[#8D867A]">So–Ne: dle dohody</span>
+                      <span className="text-[#F5C451] font-bold">NONSTOP</span><br />
+                      <span className="text-[#8D867A]">Konzultace i o víkendu</span>
                     </p>
                   </div>
                 </div>

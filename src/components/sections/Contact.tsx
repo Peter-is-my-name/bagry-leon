@@ -272,7 +272,7 @@ export function Contact() {
                 Nejrychlejší je zavolat
               </h4>
               <p className="text-sm text-[#0D0F0F]/70 mb-4">
-                Jsme k dispozici Po–Pá 7:00–17:00. Pro urgentní zakázky i o víkendu.
+Jsme NONSTOP dostupní – konzultace probíhají i o víkendu.
               </p>
               <a
                 href={`tel:${COMPANY.primaryPhone.replace(/\s/g, "")}`}

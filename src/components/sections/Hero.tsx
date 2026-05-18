@@ -24,11 +24,6 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 w-full items-center">
           {/* Left Content - 7 columns */}
           <div className="lg:col-span-7 space-y-6">
-            {/* Eyebrow */}
-            <span className="text-sm uppercase tracking-[0.16em] text-[#F5C451] block mb-4">
-              Spolehlivá česká firma
-            </span>
-
             {/* H1 */}
             <h1 className="font-[var(--font-barlow)] text-4xl sm:text-5xl lg:text-6xl font-bold uppercase leading-[1.15] text-[#F5F1E8]">
               Zemní a výkopové práce
@@ -37,7 +32,7 @@ export function Hero() {
 
             {/* Subtitle */}
             <p className="text-base lg:text-lg text-[#C9C2B6] max-w-xl leading-relaxed">
-              Poskytujeme profesionální zemní práce, terénní úpravy a nákladní dopravu. Disponujeme vlastní spolehlivou technikou pro přesné a včasné provedení vašeho projektu.
+              <strong className="text-[#F5F1E8]">Bazény na klíč, výkopy základů i terénní úpravy.</strong> Disponujeme vlastní spolehlivou technikou pro přesné a včasné provedení. Lokalita neomezena – vzdálenost není problém.
             </p>
 
             {/* CTAs */}
@@ -58,11 +53,11 @@ export function Hero() {
             </div>
 
             {/* Trust Items */}
-            <div className="flex flex-wrap gap-6 pt-4">
+            <div className="flex flex-wrap gap-x-6 gap-y-3 pt-4">
               {[
-                "Licencovaní operátoři",
                 "Vlastní technika",
-                "Lokální firma",
+                "Konzultace i o víkendu",
+                "Bez vzdálenostních limitů",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <Check className="h-4 w-4 text-[#F5C451]" />

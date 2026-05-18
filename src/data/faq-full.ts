@@ -13,7 +13,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "Pracujete i o víkendu?",
-    answer: "Standardně pracujeme Po–Pá 7:00–18:00. Pro urgentní zakázky nebo termíny náročné na počasí jsme schopni domluvit i víkendovou práci. Případný příplatek za víkend konzultujeme předem.",
+    answer: "Jsme NONSTOP dostupní – konzultace probíhají i o víkendu. Pro urgentní zakázky nebo termíny náročné na počasí domluvíme i víkendovou realizaci. Případný příplatek konzultujeme předem.",
     category: "Obecné",
   },
   {

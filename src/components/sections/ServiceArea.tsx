@@ -9,19 +9,22 @@ export function ServiceArea() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-[var(--font-barlow)] text-3xl sm:text-4xl lg:text-5xl font-bold uppercase text-[#F5F1E8] mb-4">
-            Působíme v Praze-východ a okolí
+            Lokalita neomezena
           </h2>
           <p className="text-lg text-[#8D867A]">
-            Realizujeme zakázky v okolí Šestajovic, Prahy-východ a dalších přilehlých lokalit.
+            Voláme zpět zákazníkům i ze vzdálenějších míst. <span className="text-[#F5F1E8] font-medium">Vzdálenost není problém</span> – dojedeme za vaší zakázkou.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Location Chips */}
           <div className="bg-[#1A1D1D] border border-[#38352E] p-6 lg:p-8">
-            <h3 className="font-[var(--font-barlow)] text-lg font-bold uppercase text-[#F5F1E8] mb-6">
+            <h3 className="font-[var(--font-barlow)] text-lg font-bold uppercase text-[#F5F1E8] mb-2">
               Oblasti působnosti
             </h3>
+            <p className="text-sm text-[#8D867A] mb-6">
+              Nejčastěji působíme v těchto lokalitách, ale zakázky realizujeme i dál – stačí se ozvat.
+            </p>
 
             <div className="flex flex-wrap gap-2">
               {SERVICE_AREAS.map((area) => (
@@ -33,14 +36,14 @@ export function ServiceArea() {
                   {area}
                 </span>
               ))}
-              <span className="inline-flex items-center px-3 py-1.5 bg-[#202424] border border-[#38352E] text-sm text-[#8D867A]">
-                okolní obce dle domluvy
+              <span className="inline-flex items-center px-3 py-1.5 bg-[#F5C451]/10 border border-[#F5C451]/30 text-sm text-[#F5C451] font-medium">
+                + další obce dle domluvy
               </span>
             </div>
 
-            <div className="mt-8 p-4 bg-[#202424]">
+            <div className="mt-8 p-4 bg-[#202424] border-l-2 border-[#F5C451]">
               <p className="text-sm text-[#C9C2B6] leading-relaxed">
-                Hledáte spolehlivé zemní práce, výkopové práce nebo odvoz zeminy v okolí Prahy-východ? BAGRY LEON nabízí profesionální služby s vlastní technikou pro rodinné domy, stavební firmy, obce i soukromé pozemky.
+                <strong className="text-[#F5F1E8]">Specializujeme se na výkopy bazénů.</strong> Kromě toho realizujeme zemní práce, výkopy základů, terénní úpravy a úpravy zahrad pro rodinné domy, stavební firmy i obce.
               </p>
             </div>
           </div>
