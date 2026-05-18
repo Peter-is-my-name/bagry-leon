@@ -90,3 +90,27 @@
     text-wrap: balance;
   }
 }
+
+/* Dark theme native date picker styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(0.8);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: #F5F1E8;
+}
+
+input[type="date"]:not(:focus):invalid::-webkit-datetime-edit,
+input[type="date"][value=""]::-webkit-datetime-edit {
+  color: #8D867A;
+}

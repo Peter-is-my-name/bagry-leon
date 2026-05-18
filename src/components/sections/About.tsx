@@ -33,9 +33,9 @@ export function About() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="bg-[#1A1D1D] border border-[#38352E] p-4"
+                  className="bg-[#1A1D1D] border border-[#38352E] p-4 flex items-center justify-center min-h-[72px]"
                 >
-                  <p className="text-sm text-[#C9C2B6]">{stat.label}</p>
+                  <p className="text-sm text-[#C9C2B6] text-center leading-snug">{stat.label}</p>
                 </div>
               ))}
             </div>

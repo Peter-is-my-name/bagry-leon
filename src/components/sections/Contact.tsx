@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Mail, MapPin, Send, Loader2 } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Loader2, ChevronDown } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
+import { DatePicker } from "@/components/shared/DatePicker";
 
 const serviceTypes = [
   "Zemní a výkopové práce",
@@ -13,9 +14,18 @@ const serviceTypes = [
   "Jiný dotaz",
 ];
 
+const termPresets = [
+  { value: "asap", label: "Co nejdříve" },
+  { value: "2weeks", label: "Do 14 dní" },
+  { value: "month", label: "Do měsíce" },
+  { value: "flexible", label: "Flexibilně" },
+];
+
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [selectedTerm, setSelectedTerm] = useState<string>("asap");
+  const [customDate, setCustomDate] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -141,17 +151,20 @@ export function Contact() {
                   >
                     Typ služby
                   </label>
-                  <select
-                    id="serviceType"
-                    name="serviceType"
-                    className="w-full px-4 py-3 bg-[#202424] border border-[#38352E] text-[#F5F1E8] focus:border-[#F5C451] focus:outline-none transition-colors appearance-none cursor-pointer"
-                  >
-                    {serviceTypes.map((type) => (
-                      <option key={type} value={type}>
-                        {type}
-                      </option>
-                    ))}
-                  </select>
+                  <div className="relative">
+                    <select
+                      id="serviceType"
+                      name="serviceType"
+                      className="w-full px-4 py-3 pr-10 bg-[#202424] border border-[#38352E] text-[#F5F1E8] focus:border-[#F5C451] focus:outline-none transition-colors appearance-none cursor-pointer"
+                    >
+                      {serviceTypes.map((type) => (
+                        <option key={type} value={type}>
+                          {type}
+                        </option>
+                      ))}
+                    </select>
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-[#8D867A] pointer-events-none" />
+                  </div>
                 </div>
 
                 <div>
@@ -171,25 +184,66 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="term"
-                    className="block text-xs uppercase tracking-wider text-[#8D867A] mb-2"
-                  >
+                  <label className="block text-xs uppercase tracking-wider text-[#8D867A] mb-3">
                     Preferovaný termín realizace
                   </label>
-                  <input
-                    type="text"
-                    id="term"
-                    name="term"
-                    className="w-full px-4 py-3 bg-[#202424] border border-[#38352E] text-[#F5F1E8] placeholder-[#8D867A] focus:border-[#F5C451] focus:outline-none transition-colors"
-                    placeholder="Co nejdříve / konkrétní termín"
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-3">
+                    {termPresets.map((preset) => (
+                      <button
+                        key={preset.value}
+                        type="button"
+                        onClick={() => {
+                          setSelectedTerm(preset.value);
+                          setCustomDate("");
+                        }}
+                        className={`px-3 py-3 text-xs uppercase tracking-wider border transition-all ${
+                          selectedTerm === preset.value && !customDate
+                            ? "bg-[#F5C451]/10 border-[#F5C451] text-[#F5C451]"
+                            : "bg-[#202424] border-[#38352E] text-[#C9C2B6] hover:border-[#8D867A]"
+                        }`}
+                      >
+                        {preset.label}
+                      </button>
+                    ))}
+                  </div>
+                  <DatePicker
+                    value={customDate}
+                    onChange={(v) => {
+                      setCustomDate(v);
+                      if (v) setSelectedTerm("");
+                    }}
+                    placeholder="Vyberte konkrétní datum"
+                    highlight={!!customDate}
                   />
+                  <input type="hidden" name="term" value={customDate} />
+                  <p className="text-xs text-[#8D867A] mt-2">
+                    Vyberte rychlými tlačítky nebo zvolte konkrétní datum z kalendáře.
+                  </p>
+                  <input type="hidden" name="termPreset" value={customDate ? "custom" : selectedTerm} />
                 </div>
 
                 <div className="pt-2">
-                  <p className="text-xs text-[#8D867A] mb-4">
-                    Vaše údaje použijeme pouze pro zpracování poptávky.
-                  </p>
+                  <label className="flex items-start gap-3 cursor-pointer group mb-4">
+                    <input
+                      type="checkbox"
+                      name="gdpr"
+                      required
+                      className="mt-0.5 h-4 w-4 flex-shrink-0 appearance-none border border-[#38352E] bg-[#202424] checked:bg-[#F5C451] checked:border-[#F5C451] cursor-pointer transition-colors relative checked:after:content-['✓'] checked:after:absolute checked:after:inset-0 checked:after:flex checked:after:items-center checked:after:justify-center checked:after:text-[#0D0F0F] checked:after:text-xs checked:after:font-bold focus:outline-none focus:ring-2 focus:ring-[#F5C451]/40"
+                    />
+                    <span className="text-xs text-[#C9C2B6] leading-relaxed group-hover:text-[#F5F1E8] transition-colors">
+                      Odesláním formuláře souhlasím se zpracováním osobních údajů v souladu s{" "}
+                      <a
+                        href="/ochrana-osobnich-udaju"
+                        target="_blank"
+                        rel="noopener"
+                        className="text-[#F5C451] underline hover:no-underline"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        zásadami GDPR
+                      </a>
+                      .
+                    </span>
+                  </label>
                   <button
                     type="submit"
                     disabled={isSubmitting}

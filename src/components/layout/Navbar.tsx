@@ -27,7 +27,23 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
+    } else {
+      document.body.style.overflow = "";
+      document.body.style.touchAction = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.touchAction = "";
+    };
+  }, [isMobileMenuOpen]);
+
   return (
+    <>
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
@@ -93,9 +109,10 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-[#F5F1E8] hover:text-[#F5C451] transition-colors"
+            className="lg:hidden relative z-[70] p-2 text-[#F5F1E8] hover:text-[#F5C451] transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Zavřít menu" : "Otevřít menu"}
+            type="button"
           >
             {isMobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -105,80 +122,84 @@ export function Navbar() {
           </button>
         </div>
       </div>
+    </header>
 
-      {/* Mobile Menu - Professional Redesign */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 z-40 bg-[#0D0F0F] overflow-y-auto">
-          <div className="px-5 py-6 space-y-6">
-            {/* Navigation Links - Large Touch Targets */}
-            <nav className="space-y-1">
-              {NAV_LINKS.map((link, index) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    "flex items-center py-4 px-3 text-base uppercase tracking-[0.12em] font-medium transition-all rounded-sm",
-                    isActive(link.href)
-                      ? "text-[#F5C451] bg-[#F5C451]/5 border-l-2 border-[#F5C451]"
-                      : "text-[#C9C2B6] hover:text-[#F5F1E8] hover:bg-[#1A1D1D]"
-                  )}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  aria-current={isActive(link.href) ? "page" : undefined}
-                >
-                  <span className="ml-2">{link.label}</span>
-                  {isActive(link.href) && (
-                    <span className="ml-auto text-[#F5C451] text-xs">●</span>
-                  )}
-                </Link>
-              ))}
-            </nav>
-
-            {/* Divider */}
-            <div className="h-px bg-[#38352E]" />
-
-            {/* Contact Section */}
-            <div className="space-y-3">
-              <p className="text-xs uppercase tracking-wider text-[#8D867A] px-1">
-                Rychlý kontakt
-              </p>
-              <a
-                href={`tel:${COMPANY.primaryPhone.replace(/\s/g, "")}`}
-                className="flex items-center gap-4 p-4 bg-[#1A1D1D] border border-[#38352E] rounded-sm active:bg-[#2A2F2F] transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <div className="w-12 h-12 bg-[#F5C451]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Phone className="h-5 w-5 text-[#F5C451]" />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-xs text-[#8D867A] uppercase tracking-wider">
-                    Zavolejte nám
-                  </p>
-                  <p className="text-lg font-semibold text-[#F5F1E8] tracking-wide">
-                    {COMPANY.primaryPhone}
-                  </p>
-                </div>
-              </a>
-              <p className="text-xs text-[#8D867A] px-1 leading-relaxed">
-                Jsme NONSTOP dostupní – konzultace i o víkendu.
-              </p>
-            </div>
-
-            {/* CTA Button */}
-            <div className="pt-2">
+    {/* Mobile Menu - Rendered outside header to avoid z-index stacking issues */}
+    {isMobileMenuOpen && (
+      <div 
+        className="lg:hidden fixed inset-0 z-[55] bg-[#0D0F0F] overflow-y-auto overscroll-contain"
+        style={{ top: '64px' }}
+      >
+        <div className="px-5 py-6 space-y-6 pb-24">
+          {/* Navigation Links - Large Touch Targets */}
+          <nav className="space-y-2">
+            {NAV_LINKS.map((link) => (
               <Link
-                href="/kontakt"
-                className="flex items-center justify-center gap-2 w-full py-4 text-base font-semibold uppercase tracking-wider bg-[#F5C451] text-[#0D0F0F] rounded-sm hover:bg-[#FFD875] active:bg-[#E5B440] transition-colors shadow-lg shadow-[#F5C451]/10"
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "flex items-center min-h-[56px] px-4 text-base uppercase tracking-[0.12em] font-medium transition-all rounded-sm active:scale-[0.98]",
+                  isActive(link.href)
+                    ? "text-[#F5C451] bg-[#F5C451]/10 border-l-2 border-[#F5C451]"
+                    : "text-[#C9C2B6] hover:text-[#F5F1E8] hover:bg-[#1A1D1D]"
+                )}
                 onClick={() => setIsMobileMenuOpen(false)}
+                aria-current={isActive(link.href) ? "page" : undefined}
               >
-                Poptat kalkulaci
+                <span className="ml-2">{link.label}</span>
+                {isActive(link.href) && (
+                  <span className="ml-auto text-[#F5C451] text-xs">●</span>
+                )}
               </Link>
-              <p className="text-center text-xs text-[#8D867A] mt-3">
-                Zdarma a nezávazně
-              </p>
-            </div>
+            ))}
+          </nav>
+
+          {/* Divider */}
+          <div className="h-px bg-[#38352E]" />
+
+          {/* Contact Section */}
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-wider text-[#8D867A] px-1">
+              Rychlý kontakt
+            </p>
+            <a
+              href={`tel:${COMPANY.primaryPhone.replace(/\s/g, "")}`}
+              className="flex items-center gap-4 p-4 bg-[#1A1D1D] border border-[#38352E] rounded-sm active:bg-[#2A2F2F] transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <div className="w-12 h-12 bg-[#F5C451]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                <Phone className="h-5 w-5 text-[#F5C451]" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-xs text-[#8D867A] uppercase tracking-wider">
+                  Zavolejte nám
+                </p>
+                <p className="text-lg font-semibold text-[#F5F1E8] tracking-wide">
+                  {COMPANY.primaryPhone}
+                </p>
+              </div>
+            </a>
+            <p className="text-xs text-[#8D867A] px-1 leading-relaxed">
+              Jsme NONSTOP dostupní – konzultace i o víkendu.
+            </p>
+          </div>
+
+          {/* CTA Button */}
+          <div className="pt-2">
+            <Link
+              href="/kontakt"
+              className="flex items-center justify-center gap-2 w-full py-4 text-base font-semibold uppercase tracking-wider bg-[#F5C451] text-[#0D0F0F] rounded-sm hover:bg-[#FFD875] active:bg-[#E5B440] transition-colors shadow-lg shadow-[#F5C451]/10"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Poptat kalkulaci
+            </Link>
+            <p className="text-center text-xs text-[#8D867A] mt-3">
+              Zdarma a nezávazně
+            </p>
           </div>
         </div>
-      )}
-    </header>
+      </div>
+    )}
+    </>
   );
 }
