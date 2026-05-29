@@ -15,8 +15,7 @@ export const projects: Project[] = [
     id: "1",
     title: "Výkop základů rodinného domu",
     category: "Výkop základů",
-    description:
-      "Kompletní výkop pásových základů pro rodinný dům na vesnické parcele za starým zděným plotem. Přesný výkop podle vytýčení, čistý odvoz výkopku a finální zarovnání plochy připravené pro betonáž.",
+    description: "Přesný výkop základů s odvozem zeminy. Plocha připravená pro betonáž.",
     location: "Praha-východ",
     year: "2025",
     image: "/images/projects/projekt-1/hero.jpg",
@@ -33,8 +32,7 @@ export const projects: Project[] = [
     id: "2",
     title: "Výkop bazénu v soukromé zahradě",
     category: "Výkop bazénu",
-    description:
-      "Výkop pro fóliový bazén v zahradě rodinného domu. Přesné rozměry podle projektu, rovné stěny a šetrný přístup techniky bez poškození trávníku či dlažby.",
+    description: "Výkop pro bazén dle projektu. Šetrná práce bez poškození zahrady.",
     location: "Středočeský kraj",
     year: "2025",
     image: "/images/projects/projekt-2/hero.jpg",
@@ -51,8 +49,7 @@ export const projects: Project[] = [
     id: "3",
     title: "Bazén na klíč — výkop a instalace",
     category: "Bazén na klíč",
-    description:
-      "Kompletní realizace bazénu od výkopu po usazení tělesa. Přesný výkop pro plastový bazén, výztuhy stěn, izolace a finální osazení v jediné zakázce. Specializace, kterou děláme nejraději.",
+    description: "Bazén na klíč — od výkopu po instalaci. Naše specializace.",
     location: "Středočeský kraj",
     year: "2025",
     image: "/images/projects/projekt-3/hero.jpg",
@@ -68,8 +65,7 @@ export const projects: Project[] = [
     id: "4",
     title: "Demolice rekreační chaty a úklid pozemku",
     category: "Demolice + úklid",
-    description:
-      "Demolice staré dřevěné chaty a kompletní úklid pozemku. Šetrná demolice s rozdělením materiálu, vybourání starých základů, naložení do kontejnerů a odvoz veškerého odpadu. Pozemek připravený k novému využití.",
+    description: "Demolice chaty s tříděním materiálu. Kompletní úklid a odvoz odpadu.",
     location: "Praha-východ",
     year: "2025",
     image: "/images/projects/projekt-4/hero.jpg",
@@ -85,8 +81,7 @@ export const projects: Project[] = [
     id: "5",
     title: "Terénní úpravy a deska pro bungalov",
     category: "Terénní úpravy",
-    description:
-      "Terénní úpravy a základová deska pro rekreační objekt. Odstranění staré chaty, urovnání terénu, výkop a betonáž základové desky s kamenným soklem připravené pro novostavbu.",
+    description: "Úprava terénu a betonáž základové desky. Příprava pro novostavbu.",
     location: "Středočeský kraj",
     year: "2024",
     image: "/images/projects/projekt-5/hero.jpg",
@@ -101,8 +96,7 @@ export const projects: Project[] = [
     id: "6",
     title: "Demolice staré nemovitosti",
     category: "Demolice",
-    description:
-      "Demolice staré chátrající nemovitosti uprostřed obce. Šetrné bourání s ohledem na sousední novostavbu, kompletní odklízení a odvoz suti. Pozemek připravený k novému využití.",
+    description: "Demolice nemovitosti v obci. Šetrné bourání s úklidem a odvozem.",
     location: "Praha-východ",
     year: "2024",
     image: "/images/projects/projekt-6/hero.jpg",

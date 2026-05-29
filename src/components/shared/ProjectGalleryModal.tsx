@@ -43,11 +43,14 @@ export function ProjectGalleryModal({
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
     } else {
       document.body.style.overflow = "";
+      document.body.style.touchAction = "";
     }
     return () => {
       document.body.style.overflow = "";
+      document.body.style.touchAction = "";
     };
   }, [isOpen]);
 
@@ -58,30 +61,31 @@ export function ProjectGalleryModal({
 
   return (
     <div
-      className="fixed inset-0 z-[100] bg-[#0D0F0F]/98 backdrop-blur-sm flex items-center justify-center"
+      className="fixed inset-0 z-[100] bg-[#0D0F0F]/98 backdrop-blur-sm overflow-y-auto overscroll-contain"
       onClick={onClose}
+      style={{ WebkitOverflowScrolling: 'touch' }}
     >
-      {/* Close button */}
+      {/* Close button - fixed position */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 z-10 p-3 text-[#C9C2B6] hover:text-[#F5F1E8] hover:bg-[#1A1D1D] transition-all rounded-sm"
+        className="fixed top-4 right-4 z-[110] p-3 text-[#C9C2B6] hover:text-[#F5F1E8] hover:bg-[#1A1D1D] transition-all rounded-sm"
         aria-label="Zavřít galerii"
       >
         <X className="h-6 w-6" />
       </button>
 
-      {/* Main content container */}
+      {/* Main content container - scrollable */}
       <div
-        className="relative w-full max-w-6xl mx-4 max-h-[90vh] flex flex-col lg:flex-row gap-4"
+        className="relative w-full max-w-6xl mx-auto min-h-screen py-4 px-4 flex flex-col lg:flex-row gap-4 lg:items-center"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Image viewer */}
-        <div className="relative flex-1 bg-[#1A1D1D] rounded-sm overflow-hidden min-h-[50vh] lg:min-h-[70vh]">
+        <div className="relative flex-1 bg-[#1A1D1D] rounded-sm overflow-hidden lg:min-h-[70vh]">
           {/* Main image */}
           <img
             src={currentImage}
             alt={`${project.title} - obrázek ${currentImageIndex + 1} z ${totalImages}`}
-            className="w-full h-full object-contain"
+            className="w-full h-auto max-h-[60vh] lg:max-h-[80vh] object-contain mx-auto"
           />
 
           {/* Navigation arrows */}
@@ -139,7 +143,7 @@ export function ProjectGalleryModal({
 
           {/* Thumbnails */}
           {totalImages > 1 && (
-            <div className="bg-[#1A1D1D] border border-[#38352E] p-3 rounded-sm flex-1 overflow-y-auto max-h-[30vh] lg:max-h-none">
+            <div className="bg-[#1A1D1D] border border-[#38352E] p-3 rounded-sm">
               <span className="text-[10px] uppercase tracking-wider text-[#8D867A] block mb-3">
                 Všechny fotografie
               </span>
