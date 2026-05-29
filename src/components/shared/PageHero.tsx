@@ -11,7 +11,7 @@ export function PageHero({ eyebrow, title, subtitle, breadcrumbs }: PageHeroProp
   return (
     <section className="relative bg-[#0D0F0F] pt-16 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(245,196,81,0.03),_transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(245,196,81,0.03),_transparent_50%)] pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="max-w-3xl">

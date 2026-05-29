@@ -18,7 +18,7 @@ export function CTASection({ title, description, primaryButton, secondaryButton 
   return (
     <section className="relative bg-[#0D0F0F] py-20 lg:py-28 overflow-hidden">
       {/* Diagonal stripe pattern background */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div
           className="absolute inset-0"
           style={{

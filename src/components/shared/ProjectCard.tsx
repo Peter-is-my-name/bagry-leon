@@ -18,7 +18,7 @@ export function ProjectCard({ title, location, year, scope, image, href }: Proje
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover img-zoom"
             loading="lazy"
           />
         </div>

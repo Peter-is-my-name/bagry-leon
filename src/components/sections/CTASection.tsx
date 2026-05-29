@@ -15,8 +15,8 @@ export function CTASection() {
   return (
     <section className="relative bg-[#0D0F0F] py-20 lg:py-32 overflow-hidden">
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(245,196,81,0.03),_transparent_70%)]" />
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(245,196,81,0.03),_transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div
           className="absolute inset-0"
           style={{

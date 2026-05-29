@@ -1,41 +1,12 @@
 import Link from "next/link";
+import { projects } from "@/data/projects";
 
-const galleryImages = [
-  { 
-    src: "https://www.zemni-vykopove-prace.eu/img/fotogalerie/foto_01.jpg", 
-    title: "Zemní práce",
-    size: "large" 
-  },
-  { 
-    src: "https://www.zemni-vykopove-prace.eu/img/fotogalerie/foto_02.jpg", 
-    title: "Výkopové práce",
-    size: "large" 
-  },
-  { 
-    src: "https://www.zemni-vykopove-prace.eu/img/fotogalerie/foto_03.jpg", 
-    title: "Terénní úpravy",
-    size: "small" 
-  },
-  { 
-    src: "https://www.zemni-vykopove-prace.eu/img/fotogalerie/foto_04.jpg", 
-    title: "Nákladní doprava",
-    size: "small" 
-  },
-  { 
-    src: "https://www.zemni-vykopove-prace.eu/img/fotogalerie/foto_05.jpg", 
-    title: "Komunální služby",
-    size: "small" 
-  },
-  { 
-    src: "https://www.zemni-vykopove-prace.eu/img/fotogalerie/foto_06.jpg", 
-    title: "Technika v akci",
-    size: "small" 
-  },
-];
+// Hybrid bento layout: 2 hero projects (large) + 4 supporting projects (square)
+// First two projects (most visually striking) are featured large
+const featuredProjects = projects.slice(0, 2);
+const supportingProjects = projects.slice(2, 6);
 
 export function ProjectsGallery() {
-  const largeImages = galleryImages.filter(img => img.size === "large");
-  const smallImages = galleryImages.filter(img => img.size === "small");
 
   return (
     <section id="projekty" className="bg-[#0D0F0F] py-16 lg:py-20">
@@ -60,46 +31,54 @@ export function ProjectsGallery() {
 
         {/* Bento-style Gallery */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {/* Large images - span 2 columns each */}
-          {largeImages.map((image, index) => (
-            <div
-              key={`large-${index}`}
-              className="col-span-2 aspect-[16/9] relative group overflow-hidden rounded-sm"
+          {/* Featured projects - span 2 columns each */}
+          {featuredProjects.map((project) => (
+            <Link
+              key={project.id}
+              href="/projekty"
+              className="col-span-2 aspect-[16/9] relative group overflow-hidden rounded-sm cursor-pointer"
             >
               <img
-                src={image.src}
-                alt={image.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover img-zoom"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0F0F]/80 via-[#0D0F0F]/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-3">
-                <span className="text-xs uppercase tracking-wider text-[#F5C451] font-medium">
-                  {image.title}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0F0F] via-[#0D0F0F]/70 via-[#0D0F0F]/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <span className="text-[10px] uppercase tracking-[0.16em] text-[#F5C451] font-medium block mb-1">
+                  {project.category}
+                </span>
+                <span className="text-sm sm:text-base font-semibold text-[#F5F1E8] line-clamp-2">
+                  {project.title}
                 </span>
               </div>
-            </div>
+            </Link>
           ))}
 
-          {/* Small images - square */}
-          {smallImages.map((image, index) => (
-            <div
-              key={`small-${index}`}
-              className="aspect-square relative group overflow-hidden rounded-sm"
+          {/* Supporting projects - square */}
+          {supportingProjects.map((project) => (
+            <Link
+              key={project.id}
+              href="/projekty"
+              className="aspect-square relative group overflow-hidden rounded-sm cursor-pointer"
             >
               <img
-                src={image.src}
-                alt={image.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover img-zoom"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0F0F]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                <span className="text-[10px] uppercase tracking-wider text-[#F5C451]">
-                  {image.title}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0F0F] via-[#0D0F0F]/80 via-[#0D0F0F]/40 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-3">
+                <span className="text-[9px] uppercase tracking-[0.14em] text-[#F5C451] block mb-1">
+                  {project.category}
+                </span>
+                <span className="text-xs font-medium text-[#F5F1E8] line-clamp-2 leading-tight">
+                  {project.title}
                 </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

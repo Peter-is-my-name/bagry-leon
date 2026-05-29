@@ -57,11 +57,11 @@ export function About() {
                 alt="Bagry Leon - zemní práce"
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0F0F]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0F0F]/40 to-transparent pointer-events-none" />
 
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 border border-[#F5C451]/30" />
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#F5C451]/5" />
+              <div className="absolute -top-4 -right-4 w-24 h-24 border border-[#F5C451]/30 pointer-events-none" />
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#F5C451]/5 pointer-events-none" />
             </div>
 
             {/* Label */}
