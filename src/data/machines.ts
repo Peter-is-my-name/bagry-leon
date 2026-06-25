@@ -21,7 +21,7 @@ export const machines: Machine[] = [
       "Zdvih 5,0 m — 1 000 kg",
       "Zdvih 6,1 m — 600 kg",
     ],
-    image: "https://www.zemni-vykopove-prace.eu/img/fotogalerie/foto_04.jpg",
+    image: "/img/fotogalerie/foto_04.jpg",
   },
   {
     id: "hitachi-zaxis-33u",
@@ -36,7 +36,7 @@ export const machines: Machine[] = [
       "Hydraulická svahovka 120 cm",
       "Vrták na díry a ploty",
     ],
-    image: "https://www.zemni-vykopove-prace.eu/img/fotogalerie/foto_01.jpg",
+    image: "/img/fotogalerie/foto_01.jpg",
   },
   {
     id: "bobcat-773",
@@ -50,6 +50,6 @@ export const machines: Machine[] = [
       "Přesun zeminy, písku a štěrku",
       "Vhodný pro stavby i pozemky",
     ],
-    image: "https://www.zemni-vykopove-prace.eu/img/fotogalerie/foto_06.jpg",
+    image: "/img/fotogalerie/foto_06.jpg",
   },
 ];

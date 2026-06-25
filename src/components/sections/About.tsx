@@ -40,20 +40,22 @@ export function About() {
               ))}
             </div>
 
-            <Link
-              href="#kontakt"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium uppercase tracking-wider bg-[#F5C451] text-[#0D0F0F] hover:bg-[#FFD875] transition-colors"
-            >
-              Poptat služby
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+            <div className="text-center lg:text-left">
+              <Link
+                href="#kontakt"
+                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium uppercase tracking-wider bg-[#F5C451] text-[#0D0F0F] hover:bg-[#FFD875] transition-colors"
+              >
+                Poptat služby
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
 
           {/* Visual */}
           <div className="relative">
             <div className="relative bg-[#1A1D1D] border border-[#38352E] aspect-[4/3] overflow-hidden">
               <img
-                src="https://www.zemni-vykopove-prace.eu/img/fotogalerie/foto_03.jpg"
+                src="/img/foto_onas.jpg"
                 alt="Bagry Leon - zemní práce"
                 className="absolute inset-0 w-full h-full object-cover"
               />

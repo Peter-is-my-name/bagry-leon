@@ -57,7 +57,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
-              src="https://www.zemni-vykopove-prace.eu/img/logo.png"
+              src="/img/logo.png"
               alt="Bagry Leon"
               className="h-12 w-auto"
             />
