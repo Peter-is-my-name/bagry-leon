@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { COMPANY, FOOTER_LINKS } from "@/lib/constants";
 
@@ -100,9 +101,22 @@ export function Footer() {
           <p className="text-sm text-[#8D867A]">
             © 2026 {COMPANY.name}. Všechna práva vyhrazena.
           </p>
-          <p className="text-xs text-[#8D867A]">
-            Zemní a výkopové práce Praha-východ
-          </p>
+          <a
+            href="https://nosleephouse.cz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-2 text-sm text-[#8D867A] hover:text-white transition-colors"
+          >
+            Made by
+            <Image
+              src="/nsh-black.svg"
+              alt="nosleephouse"
+              width={13}
+              height={16}
+              className="brightness-0 invert"
+            />
+            nosleephouse™
+          </a>
         </div>
       </div>
     </footer>
