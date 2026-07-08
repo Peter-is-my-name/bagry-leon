@@ -221,18 +221,48 @@ export default function KontaktPage() {
 function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [selectedTerm, setSelectedTerm] = useState<string>("asap");
   const [customDate, setCustomDate] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(null);
 
-    // Simulate form submission - replace with actual server action
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      location: (form.elements.namedItem("location") as HTMLInputElement).value,
+      serviceType: (form.elements.namedItem("serviceType") as HTMLSelectElement).value,
+      description: (form.elements.namedItem("description") as HTMLTextAreaElement).value,
+      termPreset: (form.elements.namedItem("termPreset") as HTMLInputElement).value,
+      term: (form.elements.namedItem("term") as HTMLInputElement).value,
+    };
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const json = await res.json();
+
+      if (!res.ok) {
+        setSubmitError(json.error ?? "Nepodařilo se odeslat formulář. Zkuste to prosím znovu.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      setIsSubmitted(true);
+    } catch {
+      setSubmitError("Nepodařilo se odeslat formulář. Zkontrolujte připojení a zkuste znovu.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -396,6 +426,11 @@ function ContactForm() {
         </div>
 
         <div className="pt-2">
+          {submitError && (
+            <div className="mb-4 px-4 py-3 bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+              {submitError}
+            </div>
+          )}
           <label className="flex items-start gap-3 cursor-pointer group mb-4">
             <input
               type="checkbox"

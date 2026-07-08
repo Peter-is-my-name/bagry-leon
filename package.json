@@ -23,6 +23,7 @@
     "postcss": "^8.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "resend": "^6.17.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss": "^4.1.8",
     "typescript": "^5.8.3"
