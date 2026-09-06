@@ -19,7 +19,10 @@ export const COMPANY = {
     lat: 50.1136,
     lng: 14.6776,
   },
-  ico: "", // To be filled if available
+  legalName: "BAGRY LEON s.r.o.",
+  ico: "08568201",
+  dic: "CZ08568201",
+  vatPayer: true,
   url: "https://www.bagryleon.cz",
 } as const;
 

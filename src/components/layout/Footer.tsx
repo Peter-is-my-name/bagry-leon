@@ -13,9 +13,11 @@ export function Footer() {
               Kontakt
             </h3>
             <address className="not-italic space-y-2 text-sm text-[#8D867A]">
-              <p className="text-[#F5F1E8] font-medium">{COMPANY.name}</p>
+              <p className="text-[#F5F1E8] font-medium">{COMPANY.legalName}</p>
               <p>{COMPANY.address.street}</p>
               <p>{COMPANY.address.postalCode} {COMPANY.address.city}</p>
+              <p className="pt-2">IČO: {COMPANY.ico}</p>
+              <p>DIČ: {COMPANY.dic}</p>
               <p className="pt-2">
                 <a
                   href={`tel:${COMPANY.primaryPhone.replace(/\s/g, "")}`}

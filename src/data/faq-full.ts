@@ -23,7 +23,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "Jaké máte IČO a DIČ?",
-    answer: "IČO: [TODO: doplnit] — jedná se o ryze českou firmu, nejsme plátci DPH (nebo jsme plátci DPH — dle skutečnosti klienta).",
+    answer: "IČO: 08568201, DIČ: CZ08568201. Společnost BAGRY LEON s.r.o. se sídlem Šeříková 1049, 250 92 Šestajovice. Jsme plátci DPH.",
     category: "Obecné",
   },
 
@@ -40,7 +40,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "Vystavujete fakturu s DPH?",
-    answer: "Ano, vystavujeme standardní daňové doklady. Jsme plátci DPH [TODO: potvrdit]. Fakturaci řešíme po dokončení zakázky a předání pozemku.",
+    answer: "Ano, jsme plátci DPH a vystavujeme standardní daňové doklady včetně DPH. Fakturaci řešíme po dokončení zakázky a předání pozemku.",
     category: "Cena a kalkulace",
   },
   {
