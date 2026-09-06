@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { StructuredData } from "@/components/shared/StructuredData";
+import { COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Ochrana osobních údajů — Bagry Leon",
@@ -39,8 +40,9 @@ export default function PrivacyPage() {
                 Správce osobních údajů
               </h2>
               <p className="text-[#C9C2B6] leading-relaxed">
-                Správcem osobních údajů je společnost Bagry Leon, se sídlem 
-                Šeříková 1049, 250 92 Šestajovice. Kontakt: bagryleon@seznam.cz, +420 777 111 708.
+                Správcem osobních údajů je společnost {COMPANY.legalName}, IČO: {COMPANY.ico},
+                DIČ: {COMPANY.dic}, se sídlem {COMPANY.address.street}, {COMPANY.address.postalCode}{" "}
+                {COMPANY.address.city}. Kontakt: {COMPANY.email}, {COMPANY.primaryPhone}.
               </p>
             </section>
 
