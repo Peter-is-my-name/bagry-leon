@@ -39,8 +39,9 @@ export default function PrivacyPage() {
                 Správce osobních údajů
               </h2>
               <p className="text-[#C9C2B6] leading-relaxed">
-                Správcem osobních údajů je společnost Bagry Leon, se sídlem 
-                Šeříková 1049, 250 92 Šestajovice. Kontakt: bagryleon@seznam.cz, +420 777 111 708.
+                Správcem osobních údajů je společnost BAGRY LEON s.r.o., se sídlem 
+                Šeříková 1049, 250 92 Šestajovice, IČO: 08568201, DIČ: CZ08568201.
+                Kontakt: bagryleon@seznam.cz, +420 777 111 708.
               </p>
             </section>
 
