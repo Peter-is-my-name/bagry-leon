@@ -16,6 +16,9 @@ export function Footer() {
               <p className="text-[#F5F1E8] font-medium">{COMPANY.name}</p>
               <p>{COMPANY.address.street}</p>
               <p>{COMPANY.address.postalCode} {COMPANY.address.city}</p>
+              <p className="pt-2">IČO: {COMPANY.ico}</p>
+              <p>DIČ: {COMPANY.dic}</p>
+              <p className="text-xs text-[#8D867A]">Jsme plátci DPH</p>
               <p className="pt-2">
                 <a
                   href={`tel:${COMPANY.primaryPhone.replace(/\s/g, "")}`}

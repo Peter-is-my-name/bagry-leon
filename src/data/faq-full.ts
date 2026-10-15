@@ -1,3 +1,5 @@
+import { COMPANY } from "@/lib/constants";
+
 export interface FaqItem {
   question: string;
   answer: string;
@@ -23,7 +25,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "Jaké máte IČO a DIČ?",
-    answer: "IČO: [TODO: doplnit] — jedná se o ryze českou firmu, nejsme plátci DPH (nebo jsme plátci DPH — dle skutečnosti klienta).",
+    answer: `${COMPANY.legalName}, IČO: ${COMPANY.ico}, DIČ: ${COMPANY.dic}, se sídlem ${COMPANY.address.full}. Jsme ryze česká firma a jsme plátci DPH — na každou zakázku vystavujeme řádný daňový doklad.`,
     category: "Obecné",
   },
 
@@ -40,7 +42,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "Vystavujete fakturu s DPH?",
-    answer: "Ano, vystavujeme standardní daňové doklady. Jsme plátci DPH [TODO: potvrdit]. Fakturaci řešíme po dokončení zakázky a předání pozemku.",
+    answer: "Ano. Jsme plátci DPH a vystavujeme standardní daňové doklady s vyčíslenou DPH. Fakturaci řešíme po dokončení zakázky a předání pozemku.",
     category: "Cena a kalkulace",
   },
   {

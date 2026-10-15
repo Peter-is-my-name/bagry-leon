@@ -44,7 +44,10 @@ export default function KontaktPage() {
     "@type": "LocalBusiness",
     "@id": "https://www.bagryleon.cz/#business",
     name: "Bagry Leon",
+    legalName: COMPANY.legalName,
     alternateName: "Bagry Leon — zemní a výkopové práce",
+    taxID: COMPANY.ico,
+    vatID: COMPANY.dic,
     description: "Zemní a výkopové práce, terénní úpravy a nákladní doprava v oblasti Praha-východ. Vlastní technika, licencovaní operátoři, lokální firma.",
     url: "https://www.bagryleon.cz",
     telephone: "+420777111708",
@@ -130,10 +133,15 @@ export default function KontaktPage() {
                       Adresa
                     </h3>
                     <address className="not-italic text-sm text-[#C9C2B6]">
-                      {COMPANY.name}<br />
+                      {COMPANY.legalName}<br />
                       {COMPANY.address.street}<br />
                       {COMPANY.address.postalCode} {COMPANY.address.city}
                     </address>
+                    <p className="mt-3 text-sm text-[#C9C2B6]">
+                      IČO: {COMPANY.ico}<br />
+                      DIČ: {COMPANY.dic}
+                    </p>
+                    <p className="mt-1 text-xs text-[#8D867A]">Jsme plátci DPH</p>
                   </div>
                 </div>
 
